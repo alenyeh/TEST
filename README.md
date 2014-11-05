@@ -18,8 +18,8 @@ Uitox 提供各系統串接 API, 讓各家系統 依登入 USER ID 取得相關�
 
 
 ##TODO
-1. rebase 的使用<br>
-2. conflict 時的解決<br>
-3. 把 Git 操作份用 HTML5 重寫....<br>
+1. JSON.parse 函式 的使用<br>
+2. 遇到問題的解決<br>
+3. 用 HTML5 重寫....<br>
 4. Git 基本指令頁面
 
