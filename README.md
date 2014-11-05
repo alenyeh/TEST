@@ -14,12 +14,12 @@ Uitox 提供各系統串接 API, 讓各家系統 依登入 USER ID 取得相關�
 4. Q & A
 
 ##Demo
-請參考[Easy-Git-Tutorial](http://dylandy.github.io/Easy-Git-Tutorial/index.html) 
+請參考[Easy-Git-Tutorial] (http://dylandy.github.io/Easy-Git-Tutorial/index.html) 
 
 
 ##TODO
 1. rebase 的使用<br>
 2. conflict 時的解決<br>
-3. 唔，想要把 Git 操作練習的部份用 HTML5 重寫，但是限於技術問題停擺中....<br>
+3. 把 Git 操作份用 HTML5 重寫....<br>
 4. Git 基本指令頁面
 
