@@ -3,32 +3,35 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <title>Uitox by alenyeh</title>
   </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <header>
-      <div class="container">
-        <h1>Uitox</h1>
-        <h2>API TEST</h2>
+        <header>
+          <h1>Uitox</h1>
+          <h2>API TEST</h2>
+        </header>
 
-        <section id="downloads">
-          <a href="https://github.com/alenyeh/TEST/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/alenyeh/TEST/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/alenyeh/TEST" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/alenyeh/TEST/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/alenyeh/TEST/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/alenyeh/TEST" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
-      </div>
-    </header>
 
-    <div class="container">
-      <section id="main_content">
-        <h1>
+        <hr>
+
+        <section id="main_content">
+          <h1>
 <a id="版本控制revision-control" class="anchor" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6revision-control" aria-hidden="true"><span class="octicon octicon-link"></span></a>版本控制（Revision control）</h1>
 
 <p>是維護工程藍圖的標準作法，能追蹤工程藍圖從誕生一直到定案的過程。此外，版本控制也是一種軟體工程技巧，藉此能在軟體開發的過程中，確保由不同人所編輯的同一程式檔案都得到同步。
@@ -77,14 +80,23 @@ Tag(標籤) 重要里程碑，以便參照
 <h2>
 <a id="local-vcs" class="anchor" href="#local-vcs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local VCS</h2>
 
-<p>在本地端使用 copy paste 進行資料夾管理，例如 rcs。當然，缺點是無法協同開發。
-Centralized VCS (Lock型，悲觀鎖定)
-有一中央團隊共用的Repository，當有人要編輯某個檔案時，進行鎖定，以避免其他人也同時編輯造成衝突。
-雖然可以避免衝突，但是很不方便。其他人得排隊才能編輯檔案，萬一先取出的人寫很久或忘記 解除鎖定，後果將不堪設想。
-Centralized VCS(Merge型，樂觀鎖定)
-也是有一中央團隊共用的Repository，但是不用Lock來避免衝突，而是事後發現如果有別人也修改同一個檔案(稱作衝突)，再進行手動編修解決。有非常多的VCS屬於這一型，包括CVS, Subversion, Perforce等等。Centralized VCS 的共同缺點是做什麼事都要跟伺服器連線，會比較慢。另外也有單點故障的風險(Single point of failure)，只要伺服器壞掉，大家就不用作事了。
-Distributed VCS
-分散式版本控制系統讓本地端也擁有完整的Repository，就沒有上述集中式的問題，即使沒網路，照常可以 commit 和看 history log，也不用擔心server備份。例如 Git, Mercurial(Hg), Bazaar 等就是屬於分散式版本控制系統。
+<p>在本地端使用 copy paste 進行資料夾管理，例如 rcs。當然，缺點是無法協同開發。</p>
+
+<h3>
+<a id="centralized-vcs-lock型悲觀鎖定" class="anchor" href="#centralized-vcs-lock%E5%9E%8B%E6%82%B2%E8%A7%80%E9%8E%96%E5%AE%9A" aria-hidden="true"><span class="octicon octicon-link"></span></a>Centralized VCS (Lock型，悲觀鎖定)</h3>
+
+<p>有一中央團隊共用的Repository，當有人要編輯某個檔案時，進行鎖定，以避免其他人也同時編輯造成衝突。
+雖然可以避免衝突，但是很不方便。其他人得排隊才能編輯檔案，萬一先取出的人寫很久或忘記 解除鎖定，後果將不堪設想。</p>
+
+<h3>
+<a id="centralized-vcsmerge型樂觀鎖定" class="anchor" href="#centralized-vcsmerge%E5%9E%8B%E6%A8%82%E8%A7%80%E9%8E%96%E5%AE%9A" aria-hidden="true"><span class="octicon octicon-link"></span></a>Centralized VCS(Merge型，樂觀鎖定)</h3>
+
+<p>也是有一中央團隊共用的Repository，但是不用Lock來避免衝突，而是事後發現如果有別人也修改同一個檔案(稱作衝突)，再進行手動編修解決。有非常多的VCS屬於這一型，包括CVS, Subversion, Perforce等等。Centralized VCS 的共同缺點是做什麼事都要跟伺服器連線，會比較慢。另外也有單點故障的風險(Single point of failure)，只要伺服器壞掉，大家就不用作事了。</p>
+
+<h3>
+<a id="distributed-vcs" class="anchor" href="#distributed-vcs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Distributed VCS</h3>
+
+<p>分散式版本控制系統讓本地端也擁有完整的Repository，就沒有上述集中式的問題，即使沒網路，照常可以 commit 和看 history log，也不用擔心server備份。例如 Git, Mercurial(Hg), Bazaar 等就是屬於分散式版本控制系統。
 若要說有什麼缺點，就是能力越大，功能就越複雜，一開始學習上會比較辛苦一點。</p>
 
 <h2>
@@ -93,14 +105,13 @@ Distributed VCS
 <p>物件模式(Object Mode)
 Git 中一共有四種模式 : Blob﹑Tree﹑Commit﹑Tag。</p>
 
-<hr>
-
-<p>Blob: 只是用來儲存檔案內容，連檔案名字都沒有。
+<pre><code> Blob: 只是用來儲存檔案內容，連檔案名字都沒有。
  Tree: Tree 可以儲存文件名，同時也允許儲存一組檔案。所有内容以 Tree 或 Blob儲存，其中 Tree 對應於 UNIX 中的目錄，Blob 則大致對應於 nodes 或檔案内容。
-  Commit: Commit 為你保存了關於誰、何時以及為何保存了這些快照的訊息。</p>
+  Commit: Commit 為你保存了關於誰、何時以及為何保存了這些快照的訊息。
 
-<p>Tag: Tag 非常像一個 Commit ——包含一個標籤，一组數據，一個消息和一個指针。最主要的區别就是 Tag指向一個 Commit 而不是一個 tree。它就像是一個分支引用，但是不會變化——永遠指向同一個 Commit，僅僅是提供一個更加友好的名字。
- Note : 可以把Blob 看作是檔案，Tree 看作是資料夾，Commit 看作是每次的更新，Tag 為大事件 </p>
+ Tag: Tag 非常像一個 Commit ——包含一個標籤，一组數據，一個消息和一個指针。最主要的區别就是 Tag指向一個 Commit 而不是一個 tree。它就像是一個分支引用，但是不會變化——永遠指向同一個 Commit，僅僅是提供一個更加友好的名字。
+ Note : 可以把Blob 看作是檔案，Tree 看作是資料夾，Commit 看作是每次的更新，Tag 為大事件 
+</code></pre>
 
 <h2>
 <a id="git-參照--git-references-" class="anchor" href="#git-%E5%8F%83%E7%85%A7--git-references-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git 參照 ( Git References )</h2>
@@ -116,9 +127,15 @@ tag: tag 是一個物件也是一個引用，我們在之前已經做過了詳�
 remote: 是一個標示符號指向你最後一次和伺服器的通訊的分支。
 branch: 是一個指向每個分支最前面 commit 的指標，告訴使用者分支名稱。
 </code></pre>
-      </section>
-    </div>
+        </section>
 
-    
+        <footer>
+          Uitox is maintained by <a href="https://github.com/alenyeh">alenyeh</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
   </body>
 </html>
